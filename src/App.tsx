@@ -1,10 +1,11 @@
 import Card from "./components/Card/Card"
 import React from "react"
+import PublicRoutes from "./routes/PublicRoutes"
 
 const App = () => {
   return (
-    <div className="bg-[#FEF6ED] w-full h-screen flex items-center justify-center">
-      <Card/>
+    <div className="bg-[#FEF6ED] w-full lg:h-screen lg:flex items-center justify-center">
+      <PublicRoutes/>
     </div>
   )
 }

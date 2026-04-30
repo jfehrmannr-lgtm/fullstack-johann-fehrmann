@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="PM logo">
+  <!-- Fondo transparente (útil para diferentes barras de navegador) -->
+  <rect width="32" height="32" fill="transparent"/>
+
+  <!-- Círculo mint -->
+  <circle cx="16" cy="16" r="14" fill="#D7EAE0"/>
+
+  <!-- Letras PM centradas. Ajusta 'font-size' si quieres otro grosor -->
+  <text x="16" y="16"
+        text-anchor="middle"
+        dominant-baseline="central"
+        font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif"
+        font-weight="700"
+        font-size="12"
+        fill="#0B4F4F">PM</text>
+</svg>

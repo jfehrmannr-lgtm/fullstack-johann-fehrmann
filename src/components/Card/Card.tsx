@@ -1,11 +1,12 @@
-import React, { useRef } from 'react'
-import { Button } from 'antd'
-import ProfileAvatar from "../../../public/profile-avatar.png"
-import WhatsappIcon from "../../../public/whatsapp.png"
-import GamilIcon from "../../../public/gmail.png"
-import InstagramIcon from "../../../public/instagram.png"
+import React, { useRef, useState } from 'react'
+import CardInfo from './CardInfo'
+import CardHability from './CardHability';
+import { Button } from 'antd';
+
+
 
 const Card = () => {
+  const [itShow, setItShow] = useState<"info" | "hability">("info")
   const cardRef = useRef<HTMLDivElement>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -34,65 +35,24 @@ const Card = () => {
   return (
     <div
       ref={cardRef}
-      className='bg-[#FFFBF5] w-[900px] h-[450px] flex flex-col rounded-2xl py-8 px-8 shadow-sm gap-y-6 text-cyan-950'
+      className='bg-white lg:w-[900px] lg:h-[450px] flex flex-col lg:rounded-2xl py-8 px-8 lg:shadow-sm gap-y-6 text-cyan-950'
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div className='flex items-center'>
-        <div className='flex flex-1 items-center gap-2'>
-          <div className='bg-[#D7EAE0] w-12 h-12 flex items-center justify-center text-2xl rounded-full relative'>
-            <span className='relative top-[1px]'>PM</span>
-          </div>
-          <div className='flex flex-col -space-y-1'>
-            <span className='text-xl'>
-              Psicólogo
-            </span>
-            <span className='text-xl'>
-              Pablo Martínez Leon
-            </span>
-          </div>
-        </div>
-        <div>
-          <Button className="!bg-[#D7EAE0] hover:!bg-[#EBF5F1] active:!bg-[#B8D6C7] hover:!border-[#6B8B77] !text-cyan-950">
-            Agendar una sesión
+      {itShow === "info" && (
+        <CardInfo button={
+          <Button onClick={() => setItShow("hability")} type='primary'>
+            Habilidades
           </Button>
-        </div>
-      </div>
-      <div className='grow'>
-        <div className='flex flex-grow h-full gap-x-10'>
-          <div className='flex items-center'>
-            <div className='rounded-2xl overflow-hidden'>
-              <img src={ProfileAvatar} className='w-64 h-64' />
-            </div>
-          </div>
-          <div className=' flex-1 flex justify-between flex-col h-full'>
-            <div>
-              <p className='text-4xl'>Pablo Martínez León</p>
-              <p className='text-3xl'>Psicólogo Clínico</p>
-            </div>
-            <p className='text-xl'>Apoyo psicológico para adultos y jóvenes, con enfoque en manejo de la ansiedad, estrés y crecimiento personal</p>
-            <div className=''>
-              <Button className="!bg-[#D7EAE0] hover:!bg-[#EBF5F1] active:!bg-[#B8D6C7] hover:!border-[#6B8B77] !text-cyan-950">
-                Agendar una sesión
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className='flex items-center justify-center space-x-14'>
-        <div className='flex items-center'>
-          <img src={WhatsappIcon} className='w-5 mx-1' />
-          <Button type='link' size='small'>+56951975328</Button>
-        </div>
-        <div className='flex items-center'>
-          <img src={InstagramIcon} className='w-5 mx-1' />
-          <Button type='link' size='small'>@pspablomartinez</Button>
-        </div>
-        <div className='flex items-center'>
-          <img src={GamilIcon} className='w-5 mx-1' />
-          <Button type='link' size='small'>pablomartinezleon22@uc.cl</Button>
-        </div>
-      </div>
+        } />
+      )}
+      {itShow === "hability" && (
+        <CardHability button={
+          <Button onClick={() => setItShow("info")} type='primary'>
+            Habilidades
+          </Button>
+        }/>
+      )}
     </div>
   )
 }
