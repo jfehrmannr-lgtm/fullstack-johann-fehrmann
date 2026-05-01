@@ -1,58 +1,89 @@
 import React, { useRef, useState } from 'react'
 import CardInfo from './CardInfo'
-import CardHability from './CardHability';
-import { Button } from 'antd';
+import CardHability from './CardHability'
+import { Button } from 'antd'
+import { AnimatePresence, motion } from 'framer-motion'
 
-
+const animationPreset = {
+  initial: { opacity: 0, y: 10, scale: 0.98 },
+  animate: { opacity: 1, y: 0, scale: 1 },
+  exit: { opacity: 0, y: -10, scale: 0.98 },
+  transition: { duration: 0.25, ease: 'easeInOut' }
+}
 
 const Card = () => {
   const [itShow, setItShow] = useState<"info" | "hability">("info")
-  const cardRef = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    const rotate = 1
+    const rotate = 0.4
 
-    if (!cardRef.current) return;
+    if (!cardRef.current) return
 
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    const rect = cardRef.current.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
 
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
 
-    const rotateX = ((y - centerY) / centerY) * rotate; // Máximo 2 grados
-    const rotateY = ((x - centerX) / centerX) * rotate; // Máximo 2 grados
+    const rotateX = ((y - centerY) / centerY) * rotate
+    const rotateY = ((x - centerX) / centerX) * rotate
 
-    cardRef.current.style.transform = `perspective(600px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`;
-  };
+    cardRef.current.style.transform = `perspective(600px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`
+  }
 
   const handleMouseLeave = () => {
-    if (!cardRef.current) return;
-    cardRef.current.style.transform = `perspective(400px) rotateX(0deg) rotateY(0deg) scale(1)`;
-  };
+    if (!cardRef.current) return
+    cardRef.current.style.transform = `perspective(400px) rotateX(0deg) rotateY(0deg) scale(1)`
+  }
 
   return (
     <div
       ref={cardRef}
-      className='bg-white lg:w-[900px] lg:h-[450px] flex flex-col lg:rounded-2xl py-8 px-8 lg:shadow-sm gap-y-6 text-cyan-950'
+      className='bg-white lg:w-[900px] lg:h-[450px] flex flex-col lg:rounded-2xl py-8 px-8 lg:shadow-sm text-cyan-950'
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      {itShow === "info" && (
-        <CardInfo button={
-          <Button onClick={() => setItShow("hability")} type='primary'>
-            Habilidades
-          </Button>
-        } />
-      )}
-      {itShow === "hability" && (
-        <CardHability button={
-          <Button onClick={() => setItShow("info")} type='primary'>
-            Habilidades
-          </Button>
-        }/>
-      )}
+      {/* HEADER (no animado) */}
+      <div className='flex items-center mb-4'>
+        <div className='flex flex-1 items-center gap-2'>
+          <div className='bg-[#D7EAE0] w-12 h-12 flex items-center justify-center text-2xl rounded-full relative'>
+            <span className='relative top-[1px]'>JF</span>
+          </div>
+          <div className='flex flex-col -space-y-1'>
+            <h1 className='text-xl'>
+              Johann Alexander Fehrmann Rojas
+            </h1>
+            <h2 className='text-xl'>
+              Desarrollador Fullstack
+            </h2>
+          </div>
+        </div>
+
+        <Button
+          className='w-30'
+          onClick={() => setItShow(itShow === "info" ? "hability" : "info")}
+          type='primary'
+        >
+          {itShow === "info" ? "Habilidades" : "Información"}
+        </Button>
+      </div>
+
+      {/* CONTENIDO ANIMADO */}
+      <div className="relative flex-1">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={itShow}
+            className="flex flex-col h-full"
+            initial={animationPreset.initial}
+            animate={animationPreset.animate}
+            exit={animationPreset.exit}
+          >
+            {itShow === "info" ? <CardInfo /> : <CardHability />}
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   )
 }

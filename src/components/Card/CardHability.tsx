@@ -1,58 +1,37 @@
-import React, { Fragment, type JSX } from 'react'
-import { Slider } from 'antd'
+import React, { Fragment } from 'react'
 import Bar from '../Bar/Bar'
 
-interface ICardInfo {
-  button: JSX.Element | JSX.Element[]
-}
-
-const CardHability = ({
-  button
-}: ICardInfo) => {
+const CardHability = () => {
   return (
     <Fragment>
-      <div className='flex items-center'>
-        <div className='flex flex-1 items-center gap-2'>
-            <div className='bg-[#D7EAE0] w-12 h-12 flex items-center justify-center text-2xl rounded-full relative'>
-              <span className='relative top-[1px]'>JF</span>
-            </div>
-            <div className='flex flex-col -space-y-1'>
-              <h1 className='text-xl'>
-                Johann Alexander Fehrmann Rojas
-              </h1>
-              <h2 className='text-xl'>
-                Desarrollador Fullstack
-              </h2>
-            </div>
-          </div>
-          <div>
-            {button}
-          </div>
-      </div>
       <div className='flex flex-col justify-between h-full'>
-        <div>
+        <div className='text-xl font'>
           React
-          <Bar value='xl'/>
+          <Bar value='full'/>
         </div>
-        <div>
+        <div className='text-xl font'>
           Express
-          <Bar value='xl'/>
+          <Bar value='lg'/>
         </div>
-        <div>
+        <div className='text-xl font'>
           NestJS
           <Bar value='xl'/>
         </div>
-        <div>
+        <div className='text-xl font'>
+          PostgreSQL
+          <Bar value='lg'/>
+        </div>
+        <div className='text-xl font'>
+          MongoDB
+          <Bar value='lg'/>
+        </div>
+        <div className='text-xl font'>
           GCP
           <Bar value='xl'/>
         </div>
-        <div>
-          PostgreSQL
-          <Bar value='xl'/>
-        </div>
-        <div>
-          MongoDB
-          <Bar value='xl'/>
+        <div className='text-xl font'>
+          Inglés
+          <Bar value='full'/>
         </div>
       </div>
     </Fragment>
