@@ -1,20 +1,24 @@
-Johann Fehrmann Rojas - Fullstack Developer Landing
+# Johann Fehrmann Rojas - Fullstack Developer Landing
 
-Landing page profesional desarrollada para presentar el perfil de Johann Fehrmann Rojas, Ingeniero en Informática y Desarrollador Fullstack.
+> Landing page profesional desarrollada para presentar el perfil de **Johann Fehrmann Rojas**, Ingeniero en Informática y Desarrollador Fullstack.
 
-📝 Descripción
+---
+
+## 📝 Descripción
 
 Landing page responsiva enfocada en mostrar perfil profesional, experiencia y habilidades.
 
 Stack moderno orientado a rendimiento y buenas prácticas:
 
-React 19
-Vite
-TailwindCSS
-Ant Design 5
-Framer Motion
+- React 19
+- Vite
+- TailwindCSS
+- Ant Design 5
+- Framer Motion
 
 Desarrollado con TypeScript para tipado seguro y escalabilidad.
+
+---
 
 ⚙️ Scripts Disponibles
 # Desarrollo
