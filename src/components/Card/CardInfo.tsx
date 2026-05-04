@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { Button } from 'antd'
 import ProfileAvatar from "../../assets/profile-avatar-johann.png"
 import WhatsappIcon from "../../assets/whatsapp.png"
 import GamilIcon from "../../assets/gmail.png"

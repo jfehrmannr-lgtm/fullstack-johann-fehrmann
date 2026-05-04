@@ -1,14 +1,30 @@
-image: node:20
 
-pages:
-  stage: deploy
+stages:
+  - build
+  - deploy
+
+# 🔵 1. BUILD automático
+build:
+  stage: build
   script:
     - npm ci
     - npm run build
+  artifacts:
+    paths:
+      - dist
+    expire_in: 1 hour
+
+# 🟣 2. DEPLOY manual
+deploy_pages:
+  stage: deploy
+  needs:
+    - build
+  script:
     - rm -rf public
     - mv dist public
   artifacts:
     paths:
       - public
+  when: manual
   only:
     - main
