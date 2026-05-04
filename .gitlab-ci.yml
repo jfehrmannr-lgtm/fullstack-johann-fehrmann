@@ -13,11 +13,11 @@ build:
   artifacts:
     paths:
       - dist
-    expire_in: 2 days
+    expire_in: 1 hour
 
 # 🟣 2. DEPLOY manual
 deploy_pages:
-  stage: deploy
+  stage: deploy_prod
   needs:
     - build
   script:
