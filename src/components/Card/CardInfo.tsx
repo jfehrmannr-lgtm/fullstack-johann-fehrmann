@@ -6,6 +6,7 @@ import GamilIcon from "../../assets/gmail.png"
 import Strong from '../Strong/Strong'
 import UbicationIcon from "../../assets/alfiler.png"
 import LinkedinIcon from "../../assets/linkedin.png"
+import toast from 'react-hot-toast'
 
 const CardInfo = () => {
   return (
@@ -31,7 +32,7 @@ const CardInfo = () => {
         </div>
       </div>
       <div className='flex items-center justify-center space-x-14'>
-        <a 
+        <a
           className='flex items-center'
           href="https://maps.app.goo.gl/Bo9mF271fn7sp8nc8"
           target='_blank'
@@ -47,8 +48,8 @@ const CardInfo = () => {
             <Strong>Angol</Strong>/Chile
           </div>
         </a>
-        <a 
-          className='flex items-center' 
+        <a
+          className='flex items-center'
           href="https://wa.me/56986463584"
           target='_blank'
           type='link'
@@ -61,7 +62,7 @@ const CardInfo = () => {
             +56986463584
           </div>
         </a>
-        <a 
+        <a
           className='flex items-center '
           href="https://www.linkedin.com/in/johann-fehrmann-rojas-02494a20b/"
           target="_blank"
@@ -72,12 +73,23 @@ const CardInfo = () => {
             Linkedin
           </div>
         </a>
-        <div className='flex items-center'>
+        <button
+          className='flex items-center cursor-pointer'
+          onClick={() => {
+            try {
+              navigator.clipboard.writeText("jfehrmannr@gmail.com")
+              toast.success('Correo copiado en portapapeles')
+
+            } catch (error) {
+              toast.success('No se pudo copiar el correo')
+            }
+          }}
+        >
           <img alt="Correo" src={GamilIcon} className='w-5 mx-1' />
-          <div className='hidden md:block'>
-            <Button type='link' size='small'>jfehrmannr@gmail.com</Button>
+          <div className='text-[#1677FF] text-sm hover:text-[#69B1FF] active:text-[#0859D1] duration-200 hidden md:block'>
+            jfehrmannr@gmail.com
           </div>
-        </div>
+        </button>
       </div>
     </Fragment>
   )
