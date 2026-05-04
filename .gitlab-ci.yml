@@ -4,7 +4,6 @@ stages:
   - build
   - deploy
 
-# 🔵 1. BUILD automático
 build:
   stage: build
   script:
@@ -14,12 +13,14 @@ build:
     paths:
       - dist
     expire_in: 1 hour
+  only:
+    - main
 
-# 🟣 2. DEPLOY manual
-deploy_pages:
+pages:
   stage: deploy
   needs:
-    - build
+    - job: build
+      artifacts: true
   script:
     - rm -rf public
     - mv dist public
