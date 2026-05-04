@@ -1,67 +1,97 @@
-# Johann Fehrmann Rojas - Fullstack Developer Landing
+# Johann Fehrmann Rojas - Fullstack Developer Landing Page
 
-> Landing page profesional desarrollada para presentar el perfil de **Johann Fehrmann Rojas**, Ingeniero en Informática y Desarrollador Fullstack.
+> Proyecto de landing page profesional para Johann Fehrmann Rojas, desarrollado con **React 19**, **Vite**, **TailwindCSS**, **Ant Design 5** y **Framer Motion**.
 
 ---
 
 ## 📝 Descripción
 
-Landing page responsiva enfocada en mostrar perfil profesional, experiencia y habilidades.
+Esta es una landing page profesional y responsiva creada para presentar el perfil, experiencia y habilidades de Johann Fehrmann Rojas como desarrollador fullstack.
 
-Stack moderno orientado a rendimiento y buenas prácticas:
+La aplicación está construida utilizando modernas herramientas de frontend:
 
-- React 19
-- Vite
-- TailwindCSS
-- Ant Design 5
-- Framer Motion
+- **React 19** para la interfaz de usuario.  
+- **Vite** como bundler y entorno de desarrollo.  
+- **TailwindCSS** para estilos utilitarios rápidos y consistentes.  
+- **Ant Design 5** para componentes UI avanzados y accesibles.  
+- **Framer Motion** para animaciones fluidas.  
 
-Desarrollado con TypeScript para tipado seguro y escalabilidad.
+El proyecto está estructurado con **TypeScript** para garantizar tipado seguro y escalabilidad.
 
 ---
 
-⚙️ Scripts Disponibles
-# Desarrollo
+## ⚙️ Scripts Disponibles
+
+```bash
+# Inicia el servidor de desarrollo
 npm run start
 
-# Build producción
+# Compila la aplicación para producción
 npm run build
 
-# Lint
+# Ejecuta ESLint
 npm run lint
 
-# Preview build
+# Previsualiza la build
 npm run preview
-📦 Instalación
+```
+
+---
+
+## 📦 Instalación
+
+Clona el repositorio:
+
+```bash
 git clone <URL_DEL_REPOSITORIO>
 cd fullstack-johann-fehrmann
+```
+
+Instala dependencias:
+
+```bash
 npm install
+```
+
+Inicia el proyecto:
+
+```bash
 npm run start
+```
 
 Disponible en:
 
 http://localhost:5173
 
-🚀 Deploy
+---
 
-Configurado con GitLab CI/CD + GitLab Pages:
+## 🛠 Tecnologías y Dependencias
 
-Build automático (npm ci + build)
-Deploy manual (controlado desde pipeline)
-Hosting estático gratuito
-🛠 Tecnologías
-Principales
-React
-React DOM
-TailwindCSS
-Ant Design
-Framer Motion
-Desarrollo
-Vite
-TypeScript
-ESLint
-@vitejs/plugin-react-swc
-🌐 Estructura del Proyecto
+### Dependencias principales
+
+| Paquete        | Descripción |
+|---------------|------------|
+| react         | Librería UI |
+| react-dom     | Renderizado |
+| tailwindcss   | Estilos |
+| antd          | Componentes UI |
+| framer-motion | Animaciones |
+
+### Desarrollo
+
+| Paquete                    | Descripción |
+|--------------------------|------------|
+| vite                     | Bundler |
+| typescript               | Tipado |
+| @vitejs/plugin-react-swc | React + SWC |
+| eslint                   | Linter |
+| typescript-eslint        | Reglas TS |
+
+---
+
+## 🌐 Estructura del Proyecto
+
+```bash
 fullstack-johann-fehrmann/
 │
 ├─ public/
@@ -73,22 +103,46 @@ fullstack-johann-fehrmann/
 ├─ tsconfig.json
 ├─ tailwind.config.ts
 └─ vite.config.ts
-🎨 UI / UX
-Diseño minimalista
-Animaciones suaves
-Layout responsivo
-Componentes accesibles
-🧠 Enfoque técnico
-Componentes reutilizables
-Hooks modernos de React
-Separación de responsabilidades
-Código mantenible y escalable
-📄 Licencia
+```
+
+---
+
+## 🎨 Estilos
+
+- TailwindCSS v4 para diseño responsivo  
+- Ant Design 5 para componentes UI  
+- Paleta principal: #D7EAE0  
+
+---
+
+## 🚀 Deploy
+
+Configurado con GitLab CI/CD + GitLab Pages:
+
+- Build automático (npm ci + build)  
+- Deploy manual desde pipeline  
+- Hosting estático gratuito  
+
+---
+
+## ✅ Buenas prácticas
+
+- TypeScript para tipado seguro  
+- ESLint para consistencia  
+- Arquitectura modular  
+- Hooks modernos de React  
+- Animaciones con Framer Motion  
+
+---
+
+## 📄 Licencia
 
 Proyecto privado, no destinado a distribución pública.
 
-👨‍💻 Autor
+---
 
-Johann Fehrmann Rojas
-Fullstack Developer
-React | Node.js | Cloud
+## 👨‍💻 Autor
+
+Johann Fehrmann Rojas  
+Desarrollador Fullstack  
+React | Node.js | Cloud  
