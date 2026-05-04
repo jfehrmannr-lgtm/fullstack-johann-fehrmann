@@ -46,14 +46,14 @@ const Card = () => {
       onMouseLeave={handleMouseLeave}
     >
       {/* HEADER (no animado) */}
-      <div className='flex items-center mb-4'>
+      <div className='flex md:flex-row flex-col md:items-center mb-4 md:space-y-0 space-y-4'>
         <div className='flex flex-1 items-center gap-2'>
-          <div className='bg-[#D7EAE0] w-12 h-12 flex items-center justify-center text-2xl rounded-full relative'>
+          <div className='md:flex hidden bg-[#D7EAE0] w-12 h-12 items-center justify-center text-2xl rounded-full relative'>
             <span className='relative top-[1px]'>JF</span>
           </div>
           <div className='flex flex-col -space-y-1'>
             <h1 className='text-xl'>
-              Johann Alexander Fehrmann Rojas
+              Johann <span className="md:inline-block hidden" >Alexander</span> Fehrmann Rojas
             </h1>
             <h2 className='text-xl'>
               Desarrollador Fullstack
@@ -62,7 +62,7 @@ const Card = () => {
         </div>
 
         <Button
-          className='w-30'
+          className='md:block items-center justify-center md:w-auto w-full'
           onClick={() => setItShow(itShow === "info" ? "hability" : "info")}
           type='primary'
         >
