@@ -1,0 +1,14 @@
+{
+  "es": {
+    "card.hability": "Habilidades",
+    "card.information": "Información",
+    "card.developer": "Desarrollador Fullstack",
+    "card.info.text": "Enfocado en la construcción, mantención y evolución de aplicaciones web en entornos productivos, utilizando stacks modernos como React, Node.js y servicios cloud, con énfasis en escalabilidad, rendimiento y buenas prácticas de desarrollo."
+  },
+  "en": {
+    "card.hability": "Skills",
+    "card.information": "Information",
+    "card.developer": "Fullstack Developer",
+    "card.info.text": "Focused on building, maintaining, and evolving web applications in production environments, using modern stacks such as React, Node.js, and cloud services, with an emphasis on scalability, performance, and best development practices."
+  }
+}

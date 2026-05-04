@@ -1,0 +1,1 @@
+export interface ITranslation { value: string, label: React.JSX.Element }

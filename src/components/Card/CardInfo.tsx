@@ -6,8 +6,14 @@ import Strong from '../Strong/Strong'
 import UbicationIcon from "../../assets/alfiler.png"
 import LinkedinIcon from "../../assets/linkedin.png"
 import toast from 'react-hot-toast'
+import JSONTranslation from '../../translation/translation.json'
+import { TranslationStore } from '../../store/Translation/Translation.store'
 
 const CardInfo = () => {
+  const { translation } = TranslationStore()
+
+  const translationText = JSONTranslation[translation.value.toLocaleLowerCase() as 'en' | 'es']
+
   return (
     <Fragment>
       <div className='grow pt-3'>
@@ -23,10 +29,10 @@ const CardInfo = () => {
                 Johann Fehrmann Rojas
               </h1>
               <h2 className='text-2xl md:text-3xl'>
-                Desarrollador Fullstack - Semi senior
+                {translationText["card.developer"]} - Semi senior
               </h2>
             </div>
-            <p className='text-xl'>Enfocado en la construcción, mantención y evolución de aplicaciones web en entornos productivos, utilizando stacks modernos como React, Node.js y servicios cloud, con énfasis en escalabilidad, rendimiento y buenas prácticas de desarrollo.</p>
+            <p className='text-xl'>{translationText["card.info.text"]}</p>
           </div>
         </div>
       </div>

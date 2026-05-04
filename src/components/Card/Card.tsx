@@ -3,6 +3,8 @@ import CardInfo from './CardInfo'
 import CardHability from './CardHability'
 import { Button } from 'antd'
 import { AnimatePresence, motion } from 'framer-motion'
+import JSONTranslation from '../../translation/translation.json'
+import { TranslationStore } from '../../store/Translation/Translation.store'
 
 const animationPreset = {
   initial: { opacity: 0, y: 10, scale: 0.98 },
@@ -12,8 +14,11 @@ const animationPreset = {
 }
 
 const Card = () => {
+  const { translation } = TranslationStore()
   const [itShow, setItShow] = useState<"info" | "hability">("info")
   const cardRef = useRef<HTMLDivElement>(null)
+
+  const translationText = JSONTranslation[translation.value.toLocaleLowerCase() as 'en' | 'es']
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     const rotate = 0.4
@@ -56,17 +61,17 @@ const Card = () => {
               Johann <span className="md:inline-block hidden" >Alexander</span> Fehrmann Rojas
             </h1>
             <h2 className='text-xl'>
-              Desarrollador Fullstack
+              {translationText["card.developer"]}
             </h2>
           </div>
         </div>
 
         <Button
-          className='md:block items-center justify-center md:w-auto w-full'
+          className='md:block items-center justify-center md:w-28 w-full'
           onClick={() => setItShow(itShow === "info" ? "hability" : "info")}
           type='primary'
         >
-          {itShow === "info" ? "Habilidades" : "Información"}
+          {itShow === "info" ? translationText["card.hability"] : translationText["card.information"]}
         </Button>
       </div>
 
