@@ -2,7 +2,7 @@ image: node:20
 
 stages:
   - build
-  - deploy_prod
+  - deploy
 
 # 🔵 1. BUILD automático
 build:
@@ -17,7 +17,7 @@ build:
 
 # 🟣 2. DEPLOY manual
 deploy_pages:
-  stage: deploy_prod
+  stage: deploy
   needs:
     - build
   script:
